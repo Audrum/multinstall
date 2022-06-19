@@ -16,7 +16,7 @@ Open PowerShell as admin and set your execution policy to **Unrestricted** execu
 Set-ExecutionPolicy Unrestricted
 ```
 
-![Execution policy unrestricted](/Repos/multinstall/Assets/SCR-20220620-2z9.png)
+![Execution policy unrestricted](/Assets/SCR-20220620-2z9.png)
 
 Use the option **A** for "Yes to All".
 
