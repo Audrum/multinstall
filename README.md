@@ -22,7 +22,7 @@ Use the option **A** for "Yes to All".
 
 Then donwload the [multinstall.ps1]() file, right click on it and select the option **Run with PowerShell**
 
-![Run with PowerShell](/Assets/SCR-20220620-2uy.png)
+![Run with PowerShell](/Assets/SCR-20220620-2uy.jpg)
 
 If [Winget](https://github.com/microsoft/winget-cli) is not installed, then will install it. Just follow the installation steps.
 
