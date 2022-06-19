@@ -22,17 +22,17 @@ Use the option **A** for "Yes to All".
 
 Then donwload the [multinstall.ps1]() file, right click on it and select the option **Run with PowerShell**
 
-![Run with PowerShell](/Repos/multinstall/Assets/SCR-20220620-2uy.png)
+![Run with PowerShell](/Assets/SCR-20220620-2uy.png)
 
 If [Winget](https://github.com/microsoft/winget-cli) is not installed, then will install it. Just follow the installation steps.
 
-![Update AppInstaller](/Repos/multinstall/Assets/SCR-20220620-46a.png)
+![Update AppInstaller](/Assets/SCR-20220620-46a.png)
 
-![Updating AppInstaller](/Repos/multinstall/Assets/SCR-20220620-46g.png)
+![Updating AppInstaller](/Assets/SCR-20220620-46g.png)
 
 Finally, enter the corresponding number or numbers for the action or actions that you want to execute.
 
-![Options](/Repos/multinstall/Assets/SCR-20220620-48u.png)
+![Options](/Assets/SCR-20220620-48u.png)
 
 ## Support
 
