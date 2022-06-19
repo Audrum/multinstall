@@ -1,16 +1,3 @@
- if (Test-Path -Path $Env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\winget.exe) {
-    menu
-}
-
-else {
-    Write-Host "Getting ready environment..." -ForegroundColor Yellow
-    $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-    Start-BitsTransfer $WingetURL
-    .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-    Start-Sleep -Seconds 30
-    menu
-}
-
 function menu {
 Clear-Host
 Write-Host "Select the actions to perform:"
@@ -177,4 +164,17 @@ foreach ($num in $actions) {
             exit
         }
     }
+} 
+
+ if (Test-Path -Path $Env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\winget.exe) {
+    menu
+}
+
+else {
+    Write-Host "Getting ready environment..." -ForegroundColor Yellow
+    $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+    Start-BitsTransfer $WingetURL
+    .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+    Start-Sleep -Seconds 30
+    menu
 } 
