@@ -16,7 +16,7 @@ Open PowerShell as admin and set your execution policy to **Unrestricted** execu
 Set-ExecutionPolicy Unrestricted
 ```
 
-![Execution policy unrestricted](/Assets/SCR-20220620-2z9.png)
+![Execution policy unrestricted](/Assets/SCR-20220620-2z9.jpg)
 
 Use the option **A** for "Yes to All".
 
@@ -26,13 +26,13 @@ Then donwload the [multinstall.ps1]() file, right click on it and select the opt
 
 If [Winget](https://github.com/microsoft/winget-cli) is not installed, then will install it. Just follow the installation steps.
 
-![Update AppInstaller](/Assets/SCR-20220620-46a.png)
+![Update AppInstaller](/Assets/SCR-20220620-46a.jpg)
 
-![Updating AppInstaller](/Assets/SCR-20220620-46g.png)
+![Updating AppInstaller](/Assets/SCR-20220620-46g.jpg)
 
 Finally, enter the corresponding number or numbers for the action or actions that you want to execute.
 
-![Options](/Assets/SCR-20220620-48u.png)
+![Options](/Assets/SCR-20220620-48u.jpg)
 
 ## Support
 
