@@ -1,4 +1,4 @@
-function menu {
+ function menu {
 Clear-Host
 Write-Host "Select the actions to perform:"
 Write-Host "1. Install Google Chrome"
@@ -145,8 +145,14 @@ foreach ($num in $actions) {
         }
 
         elseif($num -eq "7") {
-            Set-Location "${env:ProgramFiles(x86)}\Microsoft Office\Office16"
-            Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+
+            if (Test-Path -Path "${env:ProgramFiles(x86)}\Microsoft Office\Office16") {
+                Set-Location "${env:ProgramFiles(x86)}\Microsoft Office\Office16" 
+            }
+
+            else {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+            }
 
             Get-ChildItem ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms | ForEach-Object -Process {cscript ospp.vbs /inslic:$_}
 
@@ -177,4 +183,4 @@ else {
     .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
     Start-Sleep -Seconds 30
     menu
-} 
+}  
