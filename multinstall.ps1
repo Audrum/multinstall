@@ -18,14 +18,23 @@ $actions = $option.ToCharArray()
 foreach ($num in $actions) {
         if ($num -eq "1") {
             winget install Google.Chrome --accept-source-agreements
+
+            Start-Sleep -Seconds 5
+            menu
         }
 
         elseif($num -eq "2") {
             winget install Mozilla.Firefox --accept-source-agreements
+
+            Start-Sleep -Seconds 5
+            menu
         } 
 
         elseif($num -eq "3") {
             winget install 7zip.7zip --accept-source-agreements
+
+            Start-Sleep -Seconds 5
+            menu
         }
 
         elseif($num -eq "4") {
@@ -42,6 +51,8 @@ foreach ($num in $actions) {
         elseif($num -eq "5") {
             winget install Microsoft.PowerToys --accept-source-agreements
 
+            Start-Sleep -Seconds 5
+            menu
         }
 
         elseif($num -eq "6") {
