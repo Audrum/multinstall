@@ -62,10 +62,10 @@ foreach ($num in $actions) {
                 Write-Host "Activating $version..." -ForegroundColor Yellow
                 Write-Host "Installing Windows key..."
                 slmgr /ipk 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Conecting to activation server..."
                 slmgr /skms s8.uk.to
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
 
@@ -77,10 +77,10 @@ foreach ($num in $actions) {
                 Write-Host "Activating $version..." -ForegroundColor Yellow
                 Write-Host "Installing Windows key..."
                 slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Conecting to activation server..."
                 slmgr /skms s8.uk.to
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
 
@@ -92,10 +92,10 @@ foreach ($num in $actions) {
                 Write-Host "Activating $version..." -ForegroundColor Yellow
                 Write-Host "Installing Windows key..."
                 slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Conecting to activation server..."
                 slmgr /skms s8.uk.to
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
 
@@ -107,10 +107,10 @@ foreach ($num in $actions) {
                 Write-Host "Activating $version..." -ForegroundColor Yellow
                 Write-Host "Installing Windows key..."
                 slmgr /ipk 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Conecting to activation server..."
                 slmgr /skms s8.uk.to
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
 
@@ -122,10 +122,10 @@ foreach ($num in $actions) {
                 Write-Host "Activating $version..." -ForegroundColor Yellow
                 Write-Host "Installing Windows key..."
                 slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Conecting to activation server..."
                 slmgr /skms s8.uk.to
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
 
@@ -137,10 +137,10 @@ foreach ($num in $actions) {
                 Write-Host "Activating $version..." -ForegroundColor Yellow
                 Write-Host "Installing Windows key..."
                 slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Conecting to activation server..."
                 slmgr /skms s8.uk.to
-                Start-Sleep -Seconds 2
+                Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
 
@@ -159,22 +159,37 @@ foreach ($num in $actions) {
 
             if (Test-Path -Path "${env:ProgramFiles(x86)}\Microsoft Office\Office16") {
                 Set-Location "${env:ProgramFiles(x86)}\Microsoft Office\Office16" 
+
+                Get-ChildItem ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms | ForEach-Object -Process {cscript ospp.vbs /inslic:$_}
+
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6F7TH >nul
+                cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+                cscript ospp.vbs /sethst:s8.uk.to
+                cscript ospp.vbs /act
+
+                Start-Sleep -Seconds 5
+                menu
+            }
+
+            elseif (Test-Path -Path "$env:ProgramFiles\Microsoft Office\Office16") {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+
+                Get-ChildItem ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms | ForEach-Object -Process {cscript ospp.vbs /inslic:$_}
+
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6F7TH >nul
+                cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+                cscript ospp.vbs /sethst:s8.uk.to
+                cscript ospp.vbs /act
+
+                Start-Sleep -Seconds 5
+                menu
             }
 
             else {
-                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+                Write-Host "Office is not installed" -ForegroundColor Yellow
             }
-
-            Get-ChildItem ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms | ForEach-Object -Process {cscript ospp.vbs /inslic:$_}
-
-            cscript ospp.vbs /setprt:1688
-            cscript ospp.vbs /unpkey:6F7TH >nul
-            cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
-            cscript ospp.vbs /sethst:s8.uk.to
-            cscript ospp.vbs /act
-
-            Start-Sleep -Seconds 5
-            menu
         }
 
         elseif($num -eq "8") {
