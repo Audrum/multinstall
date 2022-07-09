@@ -1,4 +1,4 @@
- function menu {
+function menu {
 Clear-Host
 Write-Host "Select the actions to perform:"
 Write-Host "1. Install Google Chrome"
@@ -18,23 +18,14 @@ $actions = $option.ToCharArray()
 foreach ($num in $actions) {
         if ($num -eq "1") {
             winget install Google.Chrome --accept-source-agreements
-
-            Start-Sleep -Seconds 5
-            menu
         }
 
         elseif($num -eq "2") {
             winget install Mozilla.Firefox --accept-source-agreements
-
-            Start-Sleep -Seconds 5
-            menu
         } 
 
         elseif($num -eq "3") {
             winget install 7zip.7zip --accept-source-agreements
-
-            Start-Sleep -Seconds 5
-            menu
         }
 
         elseif($num -eq "4") {
@@ -43,16 +34,10 @@ foreach ($num in $actions) {
             Write-Host "===================================================" -ForegroundColor Yellow
 
             winget install Microsoft.Office --accept-source-agreements
-
-            Start-Sleep -Seconds 5
-            menu
         }
 
         elseif($num -eq "5") {
             winget install Microsoft.PowerToys --accept-source-agreements
-
-            Start-Sleep -Seconds 5
-            menu
         }
 
         elseif($num -eq "6") {
@@ -68,9 +53,6 @@ foreach ($num in $actions) {
                 Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             elseif ($version -eq "Windows 10 Home") {
@@ -83,9 +65,6 @@ foreach ($num in $actions) {
                 Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             elseif ($version -eq "Windows 10 Pro") {
@@ -98,9 +77,6 @@ foreach ($num in $actions) {
                 Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             elseif ($version -eq "Windows 11 Home Single Language") {
@@ -113,9 +89,6 @@ foreach ($num in $actions) {
                 Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             elseif ($version -eq "Windows 11 Home") {
@@ -128,9 +101,6 @@ foreach ($num in $actions) {
                 Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             elseif ($version -eq "Windows 11 Pro") {
@@ -143,15 +113,10 @@ foreach ($num in $actions) {
                 Start-Sleep -Seconds 5
                 Write-Host "Trying to activate Windows..."
                 slmgr /ato
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             else {
                 Write-Host "$version is not supported for activation, contact @audrum"
-                Start-Sleep -Seconds 5
-                menu
             }
         }
 
@@ -167,9 +132,6 @@ foreach ($num in $actions) {
                 cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
                 cscript ospp.vbs /sethst:s8.uk.to
                 cscript ospp.vbs /act
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             elseif (Test-Path -Path "$env:ProgramFiles\Microsoft Office\Office16") {
@@ -182,9 +144,6 @@ foreach ($num in $actions) {
                 cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
                 cscript ospp.vbs /sethst:s8.uk.to
                 cscript ospp.vbs /act
-
-                Start-Sleep -Seconds 5
-                menu
             }
 
             else {
@@ -196,6 +155,9 @@ foreach ($num in $actions) {
             exit
         }
     }
+
+    Start-Sleep -Seconds 5
+    menu
 } 
 
  if (Test-Path -Path $Env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\winget.exe) {
