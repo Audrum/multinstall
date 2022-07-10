@@ -42,9 +42,9 @@ foreach ($num in $actions) {
 
         elseif($num -eq "4") {
             $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Installing Microsoft Office"
-            Write-Host "==========================================================" -ForegroundColor Yellow
+            Write-Host "======================================================" -ForegroundColor Yellow
             Write-Host "= Wait until black Office installation window closes =" -ForegroundColor Yellow
-            Write-Host "==========================================================" -ForegroundColor Yellow
+            Write-Host "======================================================" -ForegroundColor Yellow
 
             $wshell = New-Object -ComObject Wscript.Shell
             $wshell.Popup("Wait until black Office installation window closes",0,"Microsoft Office Installation",48+0)
