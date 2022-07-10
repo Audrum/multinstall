@@ -9,7 +9,7 @@ function menu {
 Clear-Host
 $admin = [Security.Principal.WindowsIdentity]::GetCurrent().Groups -contains 'S-1-5-32-544'
 $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Menu - Administrator: $admin"
-Write-Host "Select the actions to perform:"
+Write-Host "Select the actions:"
 Write-Host "1. Install Google Chrome"
 Write-Host "2. Install Firefox"
 Write-Host "3. Install 7-zip"
