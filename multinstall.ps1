@@ -1,5 +1,14 @@
+if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
+        Start-Process PowerShell -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd'; & '$PSCommandPath';`"";
+        Exit;
+    }
+}
+
 function menu {
 Clear-Host
+$admin = [Security.Principal.WindowsIdentity]::GetCurrent().Groups -contains 'S-1-5-32-544'
+$host.UI.RawUI.WindowTitle = "multinstall v0.1 - Menu - Administrator: $admin"
 Write-Host "Select the actions to perform:"
 Write-Host "1. Install Google Chrome"
 Write-Host "2. Install Firefox"
@@ -17,30 +26,39 @@ $actions = $option.ToCharArray()
 
 foreach ($num in $actions) {
         if ($num -eq "1") {
+            $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Installing Google Chrome"
             winget install Google.Chrome --accept-source-agreements
         }
 
         elseif($num -eq "2") {
+            $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Installing Mozilla Firefox"
             winget install Mozilla.Firefox --accept-source-agreements
         } 
 
         elseif($num -eq "3") {
+            $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Installing 7-zip"
             winget install 7zip.7zip --accept-source-agreements
         }
 
         elseif($num -eq "4") {
-            Write-Host "===================================================" -ForegroundColor Yellow
-            Write-Host "= Wait until the Office installation window close =" -ForegroundColor Yellow
-            Write-Host "===================================================" -ForegroundColor Yellow
+            $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Installing Microsoft Office"
+            Write-Host "==========================================================" -ForegroundColor Yellow
+            Write-Host "= Wait until black Office installation window closes =" -ForegroundColor Yellow
+            Write-Host "==========================================================" -ForegroundColor Yellow
+
+            $wshell = New-Object -ComObject Wscript.Shell
+            $wshell.Popup("Wait until black Office installation window closes",0,"Microsoft Office Installation",48+0)
 
             winget install Microsoft.Office --accept-source-agreements
         }
 
         elseif($num -eq "5") {
+            $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Installing Microsoft PowerToys"
             winget install Microsoft.PowerToys --accept-source-agreements
         }
 
         elseif($num -eq "6") {
+            $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Activating Windows"
             $version = (Get-ItemProperty HKLM:'SOFTWARE\Microsoft\Windows NT\CurrentVersion').ProductName
 
             if ($version -eq "Windows 10 Home Single Language") {
@@ -121,6 +139,7 @@ foreach ($num in $actions) {
         }
 
         elseif($num -eq "7") {
+            $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Activating Microsoft Office"
 
             if (Test-Path -Path "${env:ProgramFiles(x86)}\Microsoft Office\Office16") {
                 Set-Location "${env:ProgramFiles(x86)}\Microsoft Office\Office16" 
@@ -147,7 +166,7 @@ foreach ($num in $actions) {
             }
 
             else {
-                Write-Host "Office is not installed" -ForegroundColor Yellow
+                Write-Host "Office is not installed, use option 4 for installing it." -ForegroundColor Yellow
             }
         }
 
@@ -165,10 +184,11 @@ foreach ($num in $actions) {
 }
 
 else {
+    $host.UI.RawUI.WindowTitle = "multinstall v0.1 - Updating WinGet"
     Write-Host "Getting ready environment..." -ForegroundColor Yellow
     $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
     Start-BitsTransfer $WingetURL
     .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
     Start-Sleep -Seconds 30
     menu
-}  
+}   
