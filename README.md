@@ -40,6 +40,10 @@ Finally, enter the corresponding number or numbers for the action or actions tha
 
 ![Options](./Assets/SCR-20220620-48u.jpg)
 
+## Logging
+
+Logs can be found at `C:\Windows\Logs\multinstall\` folder
+
 ## Support
 
 If you have a suggestion or comment, you can reach out to me on Telegram [@audrum](https://t.me/audrum). 
