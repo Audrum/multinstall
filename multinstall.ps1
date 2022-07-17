@@ -257,7 +257,6 @@ else {
     Write-Host "Getting ready environment..." -ForegroundColor Yellow
     $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
     Start-BitsTransfer -DisplayName "Downloading Microsoft Desktop Installer latest version..." $WingetURL
-    .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-    Start-Sleep -Seconds 30
+    Start-Process .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
     menu
 }    
