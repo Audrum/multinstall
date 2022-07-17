@@ -11,7 +11,7 @@ This is a [PowerShell](https://docs.microsoft.com/en-us/powershell) script creat
 
 ## Download
 
-It can be downloaded from [Releases](https://github.com/audrum/multinstall/releases) section or from here -> [multinstall.ps1](https://github.com/audrum/multinstall/releases/download/v0.1/multinstall.ps1) 
+It can be downloaded from [Releases](https://github.com/audrum/multinstall/releases) section or from here -> [multinstall.ps1](https://github.com/audrum/multinstall/releases/download/v0.2/multinstall.ps1) 
 
 
 ## How to use
@@ -26,7 +26,7 @@ Set-ExecutionPolicy Unrestricted
 
 Use the option **A** for "Yes to All".
 
-Then donwload the [multinstall.ps1](https://github.com/audrum/multinstall/releases/download/v0.1/multinstall.ps1) file, right click on it and select the option **Run with PowerShell**
+Then donwload the [multinstall.ps1](https://github.com/audrum/multinstall/releases/download/v0.2/multinstall.ps1) file, right click on it and select the option **Run with PowerShell**
 
 ![Run with PowerShell](./Assets/SCR-20220620-2uy.jpg)
 
