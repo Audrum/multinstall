@@ -29,17 +29,17 @@ function menu {
     foreach ($num in $actions) {
             if ($num -eq "1") {
                 $host.UI.RawUI.WindowTitle = "multinstall $multinstall_version - Installing Google Chrome"
-                winget install Google.Chrome --accept-source-agreements
+                winget install Google.Chrome --accept-source-agreements --force
             }
 
             elseif($num -eq "2") {
                 $host.UI.RawUI.WindowTitle = "multinstall $multinstall_version - Installing Mozilla Firefox"
-                winget install Mozilla.Firefox --accept-source-agreements
+                winget install Mozilla.Firefox --accept-source-agreements --force
             } 
 
             elseif($num -eq "3") {
                 $host.UI.RawUI.WindowTitle = "multinstall $multinstall_version - Installing 7-zip"
-                winget install 7zip.7zip --accept-source-agreements
+                winget install 7zip.7zip --accept-source-agreements --force
             }
 
             elseif($num -eq "4") {
@@ -117,13 +117,13 @@ function menu {
                 $wshell = New-Object -ComObject Wscript.Shell
                 $wshell.Popup("Wait until black Office installation window closes",0,"Microsoft Office Installation",48+0)
 
-                winget install Microsoft.Office --accept-source-agreements
+                winget install Microsoft.Office --accept-source-agreements --force
 
             }
 
             elseif($num -eq "5") {
                 $host.UI.RawUI.WindowTitle = "multinstall $multinstall_version - Installing Microsoft PowerToys"
-                winget install Microsoft.PowerToys --accept-source-agreements
+                winget install Microsoft.PowerToys --accept-source-agreements --force
             }
 
             elseif($num -eq "6") {
