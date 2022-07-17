@@ -6,7 +6,6 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 
 $multinstall_version = "v0.2"
-Start-Transcript -Append -Path $Env:SystemRoot\Logs\multinstall\log.txt 
 function menu {
     Clear-Host
     $admin = [Security.Principal.WindowsIdentity]::GetCurrent().Groups -contains 'S-1-5-32-544'
