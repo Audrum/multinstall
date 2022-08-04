@@ -30,7 +30,7 @@ function menu {
         if ($num -eq "1") {
             $host.UI.RawUI.WindowTitle = "multinstall $multinstall_version - Updating Microsoft Installer"
             Write-Host "Updating Microsoft Installer..." -ForegroundColor Yellow
-            $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+            $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.3.2091/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
             Start-BitsTransfer -DisplayName "Downloading Microsoft Desktop Installer latest version..." $WingetURL
             Start-Process .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
         }
