@@ -88,9 +88,9 @@ function menu {
                     Expand-Archive .\SaRACmd.zip
                     Set-Location SaRACmd/
 
-                    .\SaRAcmd.exe -S OfficeScrubScenario –AcceptEula
+                    .\SaRAcmd.exe -S OfficeScrubScenario -AcceptEula
 
-                        if ($LAStEXITCODE -eq 0) {
+                    if ($LAStEXITCODE -eq 0) {
                         Write-Host "Office has been unistalled, installing new version..." -ForegroundColor Yellow
                         Remove-Item -Recurse SaRACmd/ -Force
                         Remove-Item SaRACmd.zip -Force 
@@ -270,7 +270,7 @@ if (Test-Path -Path $Env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\Microso
 else {
     $host.UI.RawUI.WindowTitle = "multinstall $multinstall_version - Updating WinGet"
     Write-Host "Getting ready environment..." -ForegroundColor Yellow
-    $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.3.2091/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+    $WingetURL = "https://github.com/microsoft/winget-cli/releases/download/v1.3.2691/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
     Start-BitsTransfer -DisplayName "Downloading Microsoft Desktop Installer latest version..." $WingetURL
     Start-Process .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
     menu
