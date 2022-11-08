@@ -1,6 +1,6 @@
 # multinstall
 
-This is a [PowerShell](https://docs.microsoft.com/en-us/powershell) script create for making easier the post Windows installations tasks such as:
+This is a [PowerShell](https://docs.microsoft.com/en-us/powershell) script created for making easier the post Windows installation tasks such as:
 
 * Install browsers ([Firefox](https://www.mozilla.org/en-US/firefox/new/) and [Chrome](https://www.google.com/chrome/index.html))
 * Install [7-zip](https://www.7-zip.org)
