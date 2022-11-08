@@ -30,7 +30,7 @@ Then donwload the [multinstall.ps1](https://github.com/audrum/multinstall/releas
 
 ![Run with PowerShell](./Assets/SCR-20220620-2uy.jpg)
 
-If [Winget](https://github.com/microsoft/winget-cli) is not installed, then will install it. Just follow the installation steps.
+If [Winget](https://github.com/microsoft/winget-cli) is not installed, the installation will start. Just follow the installation steps.
 
 ![Update AppInstaller](./Assets/SCR-20220620-46a.jpg)
 
