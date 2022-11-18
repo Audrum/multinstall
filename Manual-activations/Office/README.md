@@ -18,6 +18,7 @@ Official download links
 * [Project 2019 (English)](https://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProjectPro2019Retail.img)
 * [Visio 2021 (English)](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/VisioPro2021Retail.img)
 * [Visio 2019 (English)](https://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/VisioPro2019Retail.img)
+* [Office for macOS (16.67.22111300)](https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Office_16.67.22111300_Installer.pkg)
 
 
 ## Activate
@@ -38,3 +39,9 @@ cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
 cscript ospp.vbs /sethst:s8.uk.to
 cscript ospp.vbs /act
 ```
+
+## Activate Office for macOS
+
+The Office activator for macOS has been taken from [alsyundawy](https://github.com/alsyundawy/Microsoft-Office-For-MacOS) repository, clic below for starting download:
+
+* [Office for macOS serializer](https://raw.githubusercontent.com/alsyundawy/Microsoft-Office-For-MacOS/master/DATA/Microsoft_Office_LTSC_2021_VL_Serializer.pkg)
