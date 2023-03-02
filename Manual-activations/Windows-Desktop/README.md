@@ -21,7 +21,7 @@ For activating either Windows 10 or Windows 11, open CMD with admin rights and r
 
 ```cmd
 slmgr /ipk PRODUCT_KEY
-slmgr /skms kms8.msguides.com
+slmgr /skms e8.us.to
 slmgr /ato
 ```
 

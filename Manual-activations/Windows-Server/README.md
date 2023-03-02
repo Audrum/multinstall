@@ -36,7 +36,7 @@ For activating Windows Server, open CMD with admin rights and run the following 
 
 ```cmd
 slmgr /ipk PRODUCT_KEY
-slmgr /skms kms8.msguides.com
+slmgr /skms e8.us.to
 slmgr /ato
 ```
 
